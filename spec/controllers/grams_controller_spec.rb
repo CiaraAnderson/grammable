@@ -1,4 +1,6 @@
 require 'rails_helper'
+RSpec.describe GramsController, type: :controller do
+
 
 describe "grams#update action" do
     it "should allow users to successfully update grams" do
@@ -8,7 +10,7 @@ describe "grams#update action" do
       gram.reload
       expect(gram.message).to eq "Changed"
     end
-
+   end
     it "should have http 404 error if the gram cannot be found" do
        patch :update, params: { id: "YOLOSWAG", gram: { message: 'Changed' } }
        expect(response).to have_http_status(:not_found)
@@ -109,5 +111,4 @@ RSpec.describe GramsController, type: :controller do
   end
 
 end
-
 
