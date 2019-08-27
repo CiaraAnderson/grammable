@@ -23,7 +23,7 @@ default: &default
   username: postgres 
   password: password 
   host: localhost
-development:
+  development:
   <<: *default
   database: grammable_development
 
